@@ -3,6 +3,10 @@
 Rust bindings to [libe4](https://github.com/teserakt-io/libe4),
 generated using `bindgen`.
 
+```
+cargo test
+```
+
 TODO:
 
 * See whether it works at all.
