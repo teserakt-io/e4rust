@@ -1,5 +1,5 @@
 [package]
-name = "e4symkey"
+name = "e4"
 version = "0.1.0"
 authors = ["Teserakt <team@teserakt.io>"]
 build = "build.rs"
@@ -8,5 +8,5 @@ build = "build.rs"
 bindgen = "0.52.0"
 
 [lib]
-name = "e4symkey"
+name = "e4"
 crate-type = ["staticlib"]

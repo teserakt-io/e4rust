@@ -7,6 +7,8 @@ use std::process::Command;
 fn main() {
     println!("cargo:rustc-link-search=./libe4/build/all/lib/");
     println!("cargo:rustc-link-lib=static=e4");
+    println!("cargo:rerun-if-changed=libe4/build/all/lib/libe4.a");
+
 
     Command::new("make")
             .current_dir("libe4/")
@@ -20,6 +22,10 @@ fn main() {
         .clang_arg("-I./libe4/build/all/include")
         .whitelist_function("e4c_protect_message")
         .whitelist_function("e4c_unprotect_message")
+        .whitelist_function("e4c_symkey_protect_message")
+        .whitelist_function("e4c_symkey_unprotect_message")
+        .whitelist_function("e4c_pubkey_protect_message")
+        .whitelist_function("e4c_pubkey_unprotect_message")
         .whitelist_function("e4c_init")
         .whitelist_function("e4c_set_storagelocation")
         .whitelist_function("e4c_load")
