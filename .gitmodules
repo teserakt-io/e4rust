@@ -1,0 +1,3 @@
+[submodule "libe4"]
+	path = libe4
+	url = https://github.com/teserakt-io/libe4
