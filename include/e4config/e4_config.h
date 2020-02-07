@@ -1,2 +1,0 @@
-#define E4_MODE_SYMKEY 1
-#define E4_STORE_FILE 1
