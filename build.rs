@@ -8,7 +8,8 @@ fn main() {
     println!("cargo:rustc-link-lib=static=e4");
 
     let bindings = bindgen::Builder::default()
-        .header("wrapper.h")
+        .header("include/e4/e4.h")
+        .clang_arg("-I./include")
         .generate()
         .expect("Unable to generate bindings");
 
