@@ -3,17 +3,16 @@
 Rust bindings to [libe4](https://github.com/teserakt-io/libe4),
 generated using `bindgen`, from the E4 headers in [include](./include):
 
+See API documentation with `cargo doc --open`.
 
 TODO:
-
 * Test and write unit tests
-* Clean exposed functions/constants (see `cargo doc --open`)
-* Document API in README
 * Publish crate (`cargo publish`)
 
 ## Usage
 
-```
+
+```rust
 pub struct _e4storage {
     pub id: [u8; 16],
     pub key: [u8; 32],
@@ -24,7 +23,7 @@ pub struct _e4storage {
 }
 ```
 
-```
+```rust
 pub unsafe extern "C" fn e4c_protect_message(
     ciphertext: *mut u8, 
     ciphertext_max_len: usize, 
@@ -37,7 +36,7 @@ pub unsafe extern "C" fn e4c_protect_message(
 ) -> c_int
 ```
 
-```
+```rust
 pub unsafe extern "C" fn e4c_unprotect_message(
     message: *mut u8, 
     message_max_len: usize, 

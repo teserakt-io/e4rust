@@ -10,6 +10,11 @@ fn main() {
     let bindings = bindgen::Builder::default()
         .header("include/e4/e4.h")
         .clang_arg("-I./include")
+        .whitelist_function("e4c_protect_message")
+        .whitelist_function("e4c_unprotect_message")
+        .whitelist_function("e4c_init")
+        .whitelist_function("e4c_set_storagelocation")
+        .whitelist_function("e4c_load")
         .generate()
         .expect("Unable to generate bindings");
 
