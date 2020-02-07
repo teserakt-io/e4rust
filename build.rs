@@ -10,6 +10,8 @@ fn main() {
 
     Command::new("make")
             .current_dir("libe4/")
+            .env("CONF", "all")
+            .env("STORE", "none")
             .spawn()
             .expect("failed to update libe4");
 
